@@ -3,6 +3,6 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY *.json /app/
 RUN npm install
-COPY ..
+COPY . .
 EXPOSE 3000
 CMD npm start
