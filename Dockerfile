@@ -1,6 +1,6 @@
 FROM node:14-alpine
 WORKDIR /app
-ENV
+ENV PATH /app/node_modules/.bin:$PATH
 COPY *.json /app/
 RUN npm install
 COPY ..
