@@ -1,7 +1,7 @@
 version: "3.2"
 services:
  web:
-   Image: [Tzivi-Zalaznik/todo-fe:latest]
+   Image: tzivya/todo-fe:latest
    depends_on:
      - api
    ports:
@@ -9,7 +9,7 @@ services:
    networks:
      - network-backend
  api:
-   Image: [Tzivi-Zalaznik/todo-be:latest]
+   Image: tzivya/todo-be:latest
    depends_on:
      - mongo
    ports:
