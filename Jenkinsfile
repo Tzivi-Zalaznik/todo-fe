@@ -12,7 +12,7 @@ pipeline {
 
                 echo "Build_stage"
 
-                sh 'DOCKER_BUILDKIT=1 docker build -t tzivya:latest --target Build .'
+                sh 'DOCKER_BUILDKIT=1 docker build -t Tzivi-Zalaznik/todo-fe:latest --target Build .'
 
             }
 
@@ -24,9 +24,9 @@ pipeline {
 
             steps {
 
-                echo "Test-stage"
+                echo "Test_stage"
 
-                sh 'DOCKER_BUILDKIT=1 docker build -t tzivya:latest --target Test .'
+                sh 'DOCKER_BUILDKIT=1 docker build -t Tzivi-Zalaznik/todo-fe:latest --target Test .'
 
             }
 
@@ -39,9 +39,34 @@ pipeline {
 
             steps {
 
-                echo "Delivery-stage"
+                echo "Delivery_stage"
 
-                sh 'DOCKER_BUILDKIT=1 docker build -t tzivya:latest --target Delivery .'
+                sh 'DOCKER_BUILDKIT=1 docker build -t Tzivi-Zalaznik/todo-fe:latest --target Delivery .'
+
+            }
+
+        }
+        
+        
+        
+         stage('Cleanup') {
+
+            steps {
+
+                echo "Cleanup_stage"
+
+                sh 'docker system prune'
+
+            }
+
+        }
+        stage('Push') {
+
+            steps {
+
+                echo "Push_stage"
+
+                sh 'docker push tzivya/todo-fe:latest'
 
             }
 
