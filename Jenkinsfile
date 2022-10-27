@@ -12,7 +12,7 @@ pipeline {
 
                 echo "Build_stage"
 
-                sh 'DOCKER_BUILDKIT=1 docker build -t Tzivi-Zalaznik/todo-fe:latest -f Dockerfile-pipeline --target Build .'
+                sh 'DOCKER_BUILDKIT=1 docker build -t tzivi-zalaznik/todo-fe:latest -f Dockerfile-pipeline --target Build .'
 
             }
 
@@ -26,7 +26,7 @@ pipeline {
 
                 echo "Test_stage"
 
-                sh 'DOCKER_BUILDKIT=1 docker build -t Tzivi-Zalaznik/todo-fe:latest -f Dockerfile-pipeline --target Test .'
+                sh 'DOCKER_BUILDKIT=1 docker build -t tzivi-zalaznik/todo-fe:latest -f Dockerfile-pipeline --target Test .'
 
             }
 
@@ -41,7 +41,7 @@ pipeline {
 
                 echo "Delivery_stage"
 
-                sh 'DOCKER_BUILDKIT=1 docker build -t Tzivi-Zalaznik/todo-fe:latest -f Dockerfile-pipeline --target Delivery .'
+                sh 'DOCKER_BUILDKIT=1 docker build -t tzivi-zalaznik/todo-fe:latest -f Dockerfile-pipeline --target Delivery .'
 
             }
 
