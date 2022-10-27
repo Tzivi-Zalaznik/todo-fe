@@ -66,11 +66,15 @@ pipeline {
 
                 echo "Push_stage"
 
+                 sh 'docker login -u tzivya -p TZ621616@'
                 sh 'docker push tzivya/todo-fe:latest'
 
             }
 
         }
+       
+
+                sh 'docker push efrat2020/todo-be:latest'
 
     }
 
