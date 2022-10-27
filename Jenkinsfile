@@ -55,7 +55,7 @@ pipeline {
 
                 echo "Cleanup_stage"
 
-                sh 'docker system prune'
+                sh 'docker system prune -f'
 
             }
 
