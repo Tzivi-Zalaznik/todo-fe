@@ -72,9 +72,6 @@ pipeline {
             }
 
         }
-       
-
-                sh 'docker push efrat2020/todo-be:latest'
 
     }
 
